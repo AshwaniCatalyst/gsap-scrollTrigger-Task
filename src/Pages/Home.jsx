@@ -1,73 +1,24 @@
 "use client";
 gsap.registerPlugin(ScrollTrigger, CSSPlugin);
 import Section1 from "@/Components/LandingPage/Section-1/Section1";
-import Section2 from "@/Components/LandingPage/Section-2/Section2";
+// import Section2 from "@/Components/LandingPage/Section-2/Section2";
 import Section3 from "@/Components/LandingPage/section-3/Section3";
 import Section4 from "@/Components/LandingPage/section-4/Section4";
 import React, { useRef, useEffect } from "react";
 import "./style.css";
 import { gsap } from "gsap";
-import { ScrollSmoother, ScrollTrigger, CSSPlugin } from "gsap/all";
+import {  ScrollTrigger, CSSPlugin } from "gsap/all";
 import Section2Aux from "@/Components/LandingPage/section-aux/section2Aux";
 const HomePage = () => {
   const root = useRef();
   const q = gsap.utils.selector(root);
   const sections = gsap.utils.toArray(".section");
   
-  // useEffect(()=>{
-  //   sections.forEach((section)=>{
-  //     var sectionHeight = section.offsetHeight;
-      // console.log("height", sectionHeight);
-      
-      // const anim = gsap.fromTo(section,
-      //   {
-      //     scale:1,
-      //     duration:1,
-      //     ease:"power4",
-      //     autoAlpha:1
-      //   },
-      //   { 
-      //     scale:0.1,
-      //     duration:0.1,
-      //     autoAlpha:0,
-          
-      //     visibility:"hidden"
-      //   }
-      //   )
-  //       let tl = gsap.timeline({
-  //         scrollTrigger: {
-  //           trigger: section,
-  //           // toggleActions:"play reverse reset restart",
-  //           start: "bottom bottom",
-  //           // end: ()=>"+=" + sectionHeight ,
-  //           markers:true,
-  //           pin:true,
-  //           scrub: true,
-  //           pin: true,
-  //           pinSpacing: false,
-  //           // snap:{
-  //           //   snapTo:1,
-  //           //   duration:1
-  //           // }
-  //         }
-  //       })
-  //     tl.to(section,{
-  //       scale:0.6,
-  //       // autoAlpha:1,
-  //       ease:"none"
-  //     }).to(section,{
-  //       autoAlpha:0,
-  //       visibility:"hidden"
-        
-        
-  //     })
-  //   });  
-  //   // });
-  // },[q]);
   useEffect(() => {
+
+    
     const anim1 = gsap.fromTo(q(".s1"), 
     {      
-      // autoAlpha:1,
       scale: 1
     },{
       autoAlpha:0,

@@ -1,3 +1,4 @@
+"use client";
 import ScrollAnimation from '@/Pages/DeBugCode'
 import FakeScroll from '@/Pages/FakeScroll'
 import HomePage from '@/Pages/Home'
