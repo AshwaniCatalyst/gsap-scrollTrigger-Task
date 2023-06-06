@@ -1,0 +1,40 @@
+.border{
+    border: 2px solid yellow;
+}
+
+.Navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    height: 80px;
+    z-index: 100;
+}
+
+.border-b{
+    border: 2px solid black;
+}
+
+.navLogo, .navLinks{
+    position: relative;
+}
+
+.navLogo{
+    font-size: 24px;
+}
+
+
+.navLinks ul{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.navLinks li{
+    margin-right: 16px;
+    font-size: 24px;
+}

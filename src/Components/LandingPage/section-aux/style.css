@@ -1,0 +1,10 @@
+.aux-section{
+    height: 100vh;
+    /* width: 100vw; */
+    background: rgb(47, 170, 133);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+}

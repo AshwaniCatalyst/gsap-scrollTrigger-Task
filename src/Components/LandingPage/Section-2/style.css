@@ -1,0 +1,29 @@
+.Docs{
+    position: relative;
+    background-color: aqua;
+    color: black;
+    min-height: 100vh;
+    
+}
+
+.border{
+    border: 2px solid red;
+}
+
+.p-0
+{
+    padding: 120px 0;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+}
+
+.centered-fixed{
+   min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
