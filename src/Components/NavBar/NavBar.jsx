@@ -38,6 +38,7 @@ const NavBar = () => {
                 <div className='navLinks'>
                 <ul >
                 {navLinks.map(link=>(
+                    // eslint-disable-next-line react/jsx-key
                     <li>
                     <a key={link.id} href={link.url}>{link.title}</a>
                     </li>
