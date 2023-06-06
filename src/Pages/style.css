@@ -1,17 +1,22 @@
 .HomePage {
-  position: relative;
-  top: 80px;
+  margin-top:80px;
   height: max-content;
   padding: 0;
   /* border: 10px solid black; */
 }
 
-.s1,
-.s2 {
-  /* border: 2px solid red; */
-  /* height: 100%; */
+.section{
+  width: 100%;
+  height: calc(100% - 63px);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* border: 10px solid white; */
 }
 
+.section-contents{
+  width: 100%;
+}
 .outer-contaner {
   overflow: hidden;
   overflow-x: hidden;

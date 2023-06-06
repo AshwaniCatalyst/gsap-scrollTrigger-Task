@@ -72,25 +72,18 @@ const HomePage = () => {
     },{
       autoAlpha:0,
       scale: 0.4,
-      // opacity:0.40,
-      // duration: 2,  
       visibility:"hidden"
     });
     const anim2 = gsap.fromTo(q(".s2"), 
     {
-      // duration:0.1,
-      // autoAlpha:1,
-      scale: 1,
+      scale: 1
     },{
-      autoAlpha:0,
-      // opacity:0.40,
-      duration: 1,  
+      autoAlpha:0, 
       scale: 0.4,
       visibility:"hidden"
     });
     const anim3 = gsap.fromTo(q(".s3"), 
     {
-      // autoAlpha:1,
       scale: 1,
     },{
       autoAlpha:0,
@@ -105,8 +98,7 @@ const HomePage = () => {
     });
     ScrollTrigger.create({
       trigger: q(".s1"),
-      endTrigger:q(".q2"),
-      // toggleActions: "play pause none none",
+      endTrigger:q(".s2"),
       animation: anim1,
       start:"bottom bottom",
       // end:"top top",
@@ -118,7 +110,7 @@ const HomePage = () => {
     }),
       ScrollTrigger.create({
         trigger: q(".s2"),
-        endTrigger:q(".q3"),
+        endTrigger:q(".s3"),
         animation: anim2,
         start:"bottom bottom",
         // end:"top top",
@@ -132,7 +124,7 @@ const HomePage = () => {
       }),
       ScrollTrigger.create({
         trigger: q(".s3"),
-        endTrigger:q(".q4"),
+        endTrigger:q(".s4"),
         animation: anim3,
         start:"bottom bottom",
         markers: true,

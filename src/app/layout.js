@@ -1,5 +1,6 @@
 import NavBar from '@/Components/NavBar/NavBar'
 import './globals.css'
+// import "./debugGlobalCss.css"
 import { Inter } from 'next/font/google'
 import Footer from '@/Components/Footer/Footer'
 
