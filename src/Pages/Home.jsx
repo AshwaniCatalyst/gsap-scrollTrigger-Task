@@ -114,7 +114,7 @@ const HomePage = () => {
         animation: anim2,
         start:"bottom bottom",
         // end:"top top",
-        markers: true,
+        // markers: true,
         duration:0.1,
         pin:true,
         scrub: true,
@@ -127,7 +127,7 @@ const HomePage = () => {
         endTrigger:q(".s4"),
         animation: anim3,
         start:"bottom bottom",
-        markers: true,
+        // markers: true,
         scrub: true,
         duration:0.1,
         pin: true,
@@ -139,7 +139,7 @@ const HomePage = () => {
         
         animation: anim4,
         start:"bottom bottom",
-        markers: true,
+        // markers: true,
         pin:true,
         scrub: true,
 
