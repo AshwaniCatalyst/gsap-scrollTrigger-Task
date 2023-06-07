@@ -56,16 +56,9 @@ body {
   /* border: 10px solid yellow */
 }
 
-
-.section-3 {
-  /* border: 10px solid blue */
+.height{
+  min-height: 200vh;
 }
-
-.height {
-  /* background: red; */
-  /* height: 200vh; */
-}
-
 .panel h1 {
   font-size: 17vw;
   letter-spacing: -0.05em;

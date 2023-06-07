@@ -2,11 +2,12 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./debugStyle.css"
+import "./debugStyle.css";
 import Section4 from "@/Components/LandingPage/section-4/Section4";
 import Section3 from "@/Components/LandingPage/section-3/Section3";
-import Section2Aux from "@/Components/LandingPage/section-aux/section2Aux";
+// import Section2Aux from "@/Components/LandingPage/section-aux/section2Aux";
 import Section1 from "@/Components/LandingPage/Section-1/Section1";
+import Section2 from "@/Components/LandingPage/Section-2/Section2";
 gsap.registerPlugin(ScrollTrigger);
 
 const ScrollAnimation = () => {
@@ -20,47 +21,47 @@ const ScrollAnimation = () => {
     panels.forEach((panel, i) => {
       // Get the element holding the content inside the panel
 
-    //   let innerpanel = panel.querySelector(".panel-content");
+      let innerpanel = panel.querySelector(".panel-content");
 
       // Get the Height of the content inside the panel
 
-    //   let panelHeight = innerpanel.offsetHeight;
-
+      let panelHeight = innerpanel.offsetHeight;
+    //   console.log("current height", panelHeight);
       // Get the window height
 
-    //   let windowHeight = window.innerHeight;
-
-    //   let difference = panelHeight - windowHeight;
+      let windowHeight = window.innerHeight;
+      console.log("window height", windowHeight);
+      let difference = panelHeight - windowHeight;
 
       // ratio (between 0 and 1) representing the portion of the overall animation that's for the fake-scrolling. We know that the scale & fade should happen over the course of 1 windowHeight, so we can figure out the ratio based on how far we must fake-scroll
-    //   let fakeScrollRatio =
-    //     difference > 0 ? difference / (difference + windowHeight) : 0;
+      let fakeScrollRatio =
+        difference > 0 ? difference / (difference + windowHeight) : 0;
 
       // if we need to fake scroll (because the panel is taller than the window), add the appropriate amount of margin to the bottom so that the next element comes in at the proper time.
-    //   if (fakeScrollRatio) {
-    //     panel.style.marginBottom = panelHeight * fakeScrollRatio + "px";
-    //   }
+      if (fakeScrollRatio) {
+        panel.style.marginBottom = panelHeight * fakeScrollRatio + "px";
+      }
 
       let tl = gsap.timeline({
         scrollTrigger: {
           trigger: panel,
           start: "bottom bottom",
-        //   end: () =>
-        //     fakeScrollRatio ? `+=${innerpanel.offsetHeight}` : "bottom top",
+          end: () =>
+            fakeScrollRatio ? `+=${innerpanel.offsetHeight}` : "bottom top",
           pinSpacing: false,
           pin: true,
           scrub: true,
         },
       });
-    //   console.log(fakeScrollRatio);
+      //   console.log(fakeScrollRatio);
       // fake scroll. We use 1 because that's what the rest of the timeline consists of (0.9 scale + 0.1 fade)
-    //   if (fakeScrollRatio) {
-    //     tl.to(innerpanel, {
-    //       y: -difference,
-    //       duration: 1 / (1 - fakeScrollRatio) - 1,
-    //       ease: "none",
-    //     });
-    //   }
+      if (fakeScrollRatio) {
+        tl.to(innerpanel, {
+          y: -difference,
+          duration: 1 / (1 - fakeScrollRatio) - 1,
+          ease: "none",
+        });
+      }
       tl.fromTo(
         panel,
         { scale: 1, opacity: 1 },
@@ -74,7 +75,7 @@ const ScrollAnimation = () => {
       <div className="slides-wrapper">
         <div ref={(el) => (panelRefs.current[0] = el)} className="panel">
           <div className="panel-content">
-            <Section1/>
+            <Section1 />
           </div>
         </div>
         <div
@@ -82,7 +83,7 @@ const ScrollAnimation = () => {
           className="panel section-2"
         >
           <div className="panel-content height">
-            <Section2Aux/>
+           <Section2/>
           </div>
         </div>
         <div
@@ -90,12 +91,12 @@ const ScrollAnimation = () => {
           className="panel section-3"
         >
           <div className="panel-content">
-           <Section3/>
+            <Section3 />
           </div>
         </div>
         <div ref={(el) => (panelRefs.current[3] = el)} className="panel">
           <div className="panel-content">
-            <Section4/>
+            <Section4 />
           </div>
         </div>
       </div>
