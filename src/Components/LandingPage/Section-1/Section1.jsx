@@ -5,7 +5,7 @@ const Section1 = () => {
     <div className='Home' id='Home'>
      <div className='container'>
       <div className='centered-fixed'>
-        <div>Home</div>
+        <div className='homeContent'>Home</div>
       </div>
      </div>
     </div>

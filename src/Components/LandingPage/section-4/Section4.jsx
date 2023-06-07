@@ -5,7 +5,7 @@ const Section4 = () => {
     <div className='Contact' id='Contact'>
       <div className='conteiner '>
         <div className='centered-fixed'>
-         <div> Contact Us</div>
+         <div className='contactContent'> Contact Us</div>
         </div>
       </div>
     </div>

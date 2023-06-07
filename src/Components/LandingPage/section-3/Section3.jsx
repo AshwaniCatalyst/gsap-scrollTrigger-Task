@@ -5,7 +5,7 @@ const Section3 = () => {
     <div className='Gallery' id='Gallery'>
       <div className='conteiner '>
         <div className='centered-fixed'>
-         <div> Gallery</div>
+         <div className='galleryContent'> Gallery</div>
         </div>
       </div>
     </div>
