@@ -1,16 +1,19 @@
   
-// import ScrollAnimation from '@/Pages/DeBugCode'
+import ScrollAnimation from '@/Pages/DeBugCode'
 // import FakeScroll from '@/Pages/FakeScroll'
-import HomePage from '@/Pages/Home'
+// import HomePage from '@/Pages/Home'
 // import HorizontalScroll from '@/Pages/HorizontalScroll'
+
+import MultiCard from "@/Pages/MultiCard";
 
 export default function Home() {
   
   return (
     <div>
-    <HomePage/>
+      {/* <MultiCard/> */}
+    {/* <HomePage/> */}
     {/* <HorizontalScroll/> */}
-    {/* <ScrollAnimation /> */}
+    <ScrollAnimation />
     {/* <FakeScroll/> */}
     </div>
   )

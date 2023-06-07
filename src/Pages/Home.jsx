@@ -24,6 +24,9 @@ const HomePage = () => {
   // const sections = gsap.utils.toArray(".section");
 
   useEffect(() => {
+
+
+     
     const anim1 = gsap.fromTo(
       (".s1"),
       {

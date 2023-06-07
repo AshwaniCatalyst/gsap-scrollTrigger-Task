@@ -1,69 +1,108 @@
 // "use client";
+// import Section1 from "@/Components/LandingPage/Section-1/Section1";
+// import Section3 from "@/Components/LandingPage/section-3/Section3";
+// import Section4 from "@/Components/LandingPage/section-4/Section4";
+// import Section2Aux from "@/Components/LandingPage/section-aux/section2Aux";
 // import React, { useRef, useEffect } from "react";
 // import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import "./debugStyle.css"
+// import "./style.css";
+// import { ScrollTrigger } from "gsap/all";
+// // import { Tween } from "gsap/gsap-core";
 // gsap.registerPlugin(ScrollTrigger);
-
-// const ScrollAnimation = () => {
+// const MultiCard = () => {
 //   const panelRefs = useRef([]);
-
+//   // const outerSectionRef = useRef([]);
+//   // const innerSectionRef = useRef([]);
 //   useEffect(() => {
-//     const panels = panelRefs.current;
-//     console.log("current", panels);
-//     panels.pop();
-//     console.log("current pop", panels);
-//     panels.forEach((panel, i) => {
-//       // Get the element holding the content inside the panel
-//       let innerpanel = panel.querySelector(".panel-content");
+//     const panel = panelRefs.current;
 
-//       // Get the Height of the content inside the panel
-//       let panelHeight = innerpanel.offsetHeight;
-
-//       // Get the window height
-//       let windowHeight = window.innerHeight;
-
-//       let difference = panelHeight - windowHeight;
-
-//       // ratio (between 0 and 1) representing the portion of the overall animation that's for the fake-scrolling. We know that the scale & fade should happen over the course of 1 windowHeight, so we can figure out the ratio based on how far we must fake-scroll
-//       let fakeScrollRatio =
-//         difference > 0 ? difference / (difference + windowHeight) : 0;
-
-//       // if we need to fake scroll (because the panel is taller than the window), add the appropriate amount of margin to the bottom so that the next element comes in at the proper time.
-//       if (fakeScrollRatio) {
-//         panel.style.marginBottom = panelHeight * fakeScrollRatio + "px";
-//       }
-
+//     panel.forEach((panel, i) => {
 //       let tl = gsap.timeline({
 //         scrollTrigger: {
 //           trigger: panel,
 //           start: "bottom bottom",
-//           end: () =>
-//             fakeScrollRatio ? `+=${innerpanel.offsetHeight}` : "bottom top",
-//           pinSpacing: false,
-//           pin: true,
+//           end:"top top",
 //           scrub: true,
+//           pin: true,
+//           pinSpacing: false,
 //         },
 //       });
-//     //   console.log(fakeScrollRatio);
-//       // fake scroll. We use 1 because that's what the rest of the timeline consists of (0.9 scale + 0.1 fade)
-//       if (fakeScrollRatio) {
-//         tl.to(innerpanel, {
-//           y: -difference,
-//           duration: 1 / (1 - fakeScrollRatio) - 1,
-//           ease: "none",
-//         });
-//       }
+//       console.log("section",panel);
 //       tl.fromTo(
 //         panel,
-//         { scale: 1, opacity: 1 },
+//         {
+//           scale: 1,
+//         },
 //         { scale: 0.5, opacity: 0.5, duration: 0.9 }
 //       ).to(panel, { opacity: 0, duration: 0.1 });
 //     });
-//   }, []);
+//     //  const currentSection = sectionRef.current;
+//     //  currentSection.pop();
+//     // const sectionArray = gsap.utils.toArray(".section");
+//     // currentSection.forEach((section,i)=>{
+//     // console.log("inner",outerSectionRef);
+//     // const anim = gsap.fromTo(
+//     //     outerSectionRef.current,
+//     //     {
+//     //       scale: 1,
+//     //     },
+//     //     {
+//     //       autoAlpha: 0,
+//     //       scale: 0,
+//     //       visibility: "hidden",
+//     //     }
+//     //   );
 
+//     // let tl = gsap.to(sectionArray,{
+//     //     scrollTrigger:{
+//     //         trigger:innerSectionRef.current,
+//     //         animation: anim ,
+//     //         start:"bottom bottom",
+//     //         end:"top top",
+//     //         pin: true,
+//     //         scrub: true,
+//     //         pin: true,
+//     //         pinSpacing: false,
+//     //     }
+//     // })
+
+//     // tl.fromTo(sectionArray,{
+//     //     scale:1
+//     // },{
+//     //     // autoAlpha: 0,
+//     //       scale: 1.4,
+//     //     //   visibility: "hidden",
+//     // })
+
+//     // const anim1 = gsap.fromTo(
+//     //     section,
+//     //     {
+//     //       scale: 1,
+//     //     },
+//     //     {
+//     //       autoAlpha: 0,
+//     //       scale: 0.4,
+//     //       visibility: "hidden",
+//     //     }
+//     //   );
+//     //   ScrollTrigger.create({
+//     //     trigger: (section),
+//     //     // endTrigger: (".s2"),
+//     //     animation: anim1,
+//     //     start: "bottom bottom",
+//     //     // end:"top top",
+//     //     pin: true,
+
+//     //     scrub: true,
+//     //     pin: true,
+//     //     pinSpacing: false,
+//     //     // snap:1
+//     //   });
+//     //  })
+//   }, []);
 //   return (
-//     <div>
+//     <>
+//       <div>
 //       <div className="slides-wrapper">
 //         <div ref={(el) => (panelRefs.current[0] = el)} className="panel">
 //           <div className="panel-content">
@@ -155,7 +194,8 @@
 //         </div>
 //       </div>
 //     </div>
+//     </>
 //   );
 // };
 
-// export default ScrollAnimation;
+// export default MultiCard;
